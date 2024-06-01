@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Show Less/More</title>
+		<meta name="description" content="This is the second post.">
+
+		<link rel="icon" href="/img/favicon.png">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="bakankaya&#39;s blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="bakankaya&#39;s blog">
+
+		<meta name="generator" content="Eleventy v2.0.1">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+@font-face {
+	font-family: lato;
+	src: url(/public/css/fonts/Lato-Regular.ttf);
+	font-style: normal;
+}
+
+
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #bfc1ce;
+
+	--text-color: var(--color-blue-darker);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+
+	--color-detail: #45586a;
+	--color-another-gray: #878ea0;
+	--color-blue: #2e3b4e;
+	--color-blue-darker: #171c30;
+	--2: #2172ab;
+	--3: #981f1c;
+	--color-white: #b4b7c3;
+	--color-black:#070e1e;
+	--4: #3a3845;
+	--5: #9a9cb1;
+}
+
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		/* --text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #353235;
+	}
+} */ */
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+h2{
+	color: var(--color-blue);
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href]:not(.home-link) {
+	color: var(--text-color-link);
+}
+a[href]:visited:not(.home-link) {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover:not(.home-link),
+a[href]:active:not(.home-link) {
+	color: var(--text-color-link-active);
+}
+
+main {
+	/* padding: 1rem; */
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 2px solid var(--3);
+	box-shadow: 0 3px 6px var(--color-another-gray);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--3);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	/* padding: 1em; */
+}
+
+.home-link {
+	font-size: 1.2em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+	padding: 1em;
+	background-color: var(--3);
+	color: var(--background-color);
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 1em;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+	color: var(--color-blue);
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+	color: var(--2);
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+.post {
+	background-color: #cccedb;
+	border-radius: 3px;
+	padding: 1em 0.5em;
+	box-shadow: 0 1px 1px var(--color-another-gray);
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">bakankaya&#39;s blog</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Posts</a></li>
+					<li class="nav-item"><a href="/tags/">Tags</a></li>
+					<li class="nav-item"><a href="/Resources/">Resources</a></li>
+					<li class="nav-item"><a href="/about/">About Me</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Show Less/More</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-06-01">01 June 2024</time></li>
+	<li><a href="/tags/react/" class="post-tag">React</a></li>
+</ul>
+<div class="post">
+<p>I wanted to create a accordion like show/hide functionality to my React project. It was a simple enough request from client (me!), but it was not a simple search for my part.</p>
+<p>First of all, the things I wanted to show was an array full of objects and the initial rendering was made by a <code>.map</code> method.</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> arrayName <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span><span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">description</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">url</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">description</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+  <span class="token punctuation">]</span>
+  
+<span class="token keyword">return</span><span class="token punctuation">(</span>
+
+<span class="token operator">...</span>
+
+<span class="token punctuation">{</span>arrayName<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">arrayItem</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>Component
+            key<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+            title<span class="token operator">=</span><span class="token punctuation">{</span>arrayItemt<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+            description<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>description<span class="token punctuation">}</span>
+            url<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>url<span class="token punctuation">}</span>
+          <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  </code></pre>
+<p>I didn't wanted to change the whole code just for this. So I tried to find a solution around the code.</p>
+<p>My first idea was to limit the viewport, hide the overflow with some css and connect the button to viewport to widen the part where my list is rendered. It was simple, fast and first to come to mind.</p>
+<p>But it has caveats of its own. First of all it would be a responsiveness hell. Also, it was all or limited, maybe in the future I wanted a more gradual system like show more&gt; show more&gt; show more... show less/collapse. So it was a good oppurtunity to create a <code>useState</code> hook.</p>
+<p>So I defined the useState array at the start of the main function:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">[</span>itemList<span class="token punctuation">,</span> setItemList<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>I preferred the conventional naming for everything. It actually doesn't matter what you name them, but for readability I chose the boring names.<br>
+for the initial state I wrote '3' because that's the number of items I wanted to show, well... 'initially'.</p>
+<p>So now the imporant part comes. To find this solution took some time on my part.<br>
+As I mentioned, rendered array used a <code>.map</code> method. Which maps <em>all</em> the items in array. How can I show less, and more importantly, then change the number to show more?</p>
+<p>Well the answer is another method called <code>.slice</code>.</p>
+<p>And in JavaScript you can use more than one method on the same line;</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token punctuation">{</span>arrayName<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> itemList<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">arrayItem</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>Component
+            key<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+            title<span class="token operator">=</span><span class="token punctuation">{</span>arrayItemt<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+            description<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>description<span class="token punctuation">}</span>
+            url<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>url<span class="token punctuation">}</span>
+            imageSrc<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>imageSrc<span class="token punctuation">}</span>
+          <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre>
+<p>It takes two arguments the start and end point of a 'slice' of your array. Since I wanted to start from the begining all the time first one is '0', second was the 'itemList' and this way I can change it anytime I want.</p>
+<p>then I added a function to manipulate the state:</p>
+<pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>itemList <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span>arrayName<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>It is pretty straight foward but I'll explain anyway. When clicked if the itemlist in initial state which is 3, change the state to array's length, which means all of it.<br>
+When state is changed, and become more than 3 else is run when we call the function, which changes the state to 3 again.<br>
+(This comparison probably be made with absolute compare <code>===</code> better. But it works all the same in this case.)</p>
+<p>And lastly a Button to bind the function added to the rendering part:</p>
+<pre class="language-jsx" tabindex="0"><code class="language-jsx"><span class="token keyword">return</span><span class="token punctuation">(</span>
+    
+    <span class="token operator">...</span>
+    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Button</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span></code></pre>
+<p>Now, This buttons text needs to change to 'more' or 'less'. And we can do it with a simple ternary script here as well.</p>
+<pre class="language-js" tabindex="0"><code class="language-js">condition <span class="token operator">?</span> exprIfTrue <span class="token operator">:</span> exprIfFalse</code></pre>
+<p>Another way that we can do it with is to add this to <code>handleClick</code> and pass it to rendering parts. But I have other plans for there later, so this will do fine. so in our case it will be like this;</p>
+<pre class="language-jsx" tabindex="0"><code class="language-jsx"><span class="token keyword">return</span><span class="token punctuation">(</span>
+    <span class="token operator">...</span>
+    <span class="token operator">...</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">{</span>itemsList <span class="token operator">===</span> <span class="token number">3</span> <span class="token operator">?</span> <span class="token string">"Show More"</span> <span class="token operator">:</span> <span class="token string">"Show Less"</span><span class="token punctuation">}</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Button</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span></code></pre>
+<p><strong>Sucsess!</strong> Now with useState I made a functional button that shows More/Less.</p>
+<p>But now the position of viewport changes and leaves me in unwanted places everytime I press the button. So it would be nice to add some animation and change the position as well. So I expand my <code>handleClick</code> function a little more;</p>
+<pre class="language-jsx" tabindex="0"><code class="language-jsx">  <span class="token keyword">const</span> <span class="token punctuation">[</span>itemList<span class="token punctuation">,</span> setItemList<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> startElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"section-start"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> endElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"section-end"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+<span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>itemList <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span>projects<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      endElement<span class="token punctuation">.</span><span class="token function">scrollIntoView</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">behavior</span><span class="token operator">:</span> <span class="token string">"smooth"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">block</span><span class="token operator">:</span> <span class="token string">"start"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      startElement<span class="token punctuation">.</span><span class="token function">scrollIntoView</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">behavior</span><span class="token operator">:</span> <span class="token string">"smooth"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">block</span><span class="token operator">:</span> <span class="token string">"start"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>with <code>getElementById</code> I added some <code>id</code> to places I wanted to scroll and locate them in my function.
+then with <code>.scrollIntoView</code> I change my viewport everytime I pressed the button.</p>
+
+</div>
+<ul class="links-nextprev"><li>Previous: <a href="/blog/00_hello_world/">Hello, World!</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- This page `/blog/01_show_less/` was built on 2024-06-01T20:48:41.397Z -->
+	</body>
+</html>
