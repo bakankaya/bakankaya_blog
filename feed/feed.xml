@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
 	<title>bakankaya&#39;s blog</title>
 	<subtitle>desctiption</subtitle>
-	<link href="https://bakankaya.xyz/bakankaya_blog/feed/feed.xml" rel="self"/>
-	<link href="https://bakankaya.xyz/bakankaya_blog/"/>
+	<link href="https://bakankaya.xyz/feed/feed.xml" rel="self"/>
+	<link href="https://bakankaya.xyz/"/>
 	<updated>2024-06-01T00:00:00Z</updated>
 	<id>https://bakankaya.xyz/</id>
 	<author>
@@ -13,9 +13,9 @@
 	
 	<entry>
 		<title>Show Less/More</title>
-		<link href="https://bakankaya.xyz/bakankaya_blog/blog/01_show_less/"/>
+		<link href="https://bakankaya.xyz/blog/01_show_less/"/>
 		<updated>2024-06-01T00:00:00Z</updated>
-		<id>https://bakankaya.xyz/bakankaya_blog/blog/01_show_less/</id>
+		<id>https://bakankaya.xyz/blog/01_show_less/</id>
 		<content type="html">&lt;p&gt;I wanted to create a accordion like show/hide functionality to my React project. It was a simple enough request from client (me!), but it was not a simple search for my part.&lt;/p&gt;
 &lt;p&gt;First of all, the things I wanted to show was an array full of objects and the initial rendering was made by a &lt;code&gt;.map&lt;/code&gt; method.&lt;/p&gt;
 &lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; arrayName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
@@ -114,9 +114,9 @@ then with &lt;code&gt;.scrollIntoView&lt;/code&gt; I change my viewport everytim
 	
 	<entry>
 		<title>Hello, World!</title>
-		<link href="https://bakankaya.xyz/bakankaya_blog/blog/00_hello_world/"/>
+		<link href="https://bakankaya.xyz/blog/00_hello_world/"/>
 		<updated>2024-05-31T00:00:00Z</updated>
-		<id>https://bakankaya.xyz/bakankaya_blog/blog/00_hello_world/</id>
+		<id>https://bakankaya.xyz/blog/00_hello_world/</id>
 		<content type="html">&lt;p&gt;I guess it is a suitable first post for a blog about programming. I&#39;m neither an engineer nor a programmer per se, but I&#39;m an enthusiast and an aspiring developer. I was born in an internetless era, so everything that has been made so far has been magical to me, and it has been my true interest and hobby since I was a child. I started to get serious about it, which is relatively new. For more than two years, I have been studying at bootcamps, in certification programs, for an undergraduate degree, and so on.&lt;/p&gt;
 &lt;p&gt;In other words, I have been in tutorial hell. And I will continue to be. Because I&#39;m still learning and discovering. This blog is another part of it.&lt;/p&gt;
 &lt;p&gt;I wanted to create a blog for a very long time; better late than never. In this blog, I will share what I learned and how I learned it. Maybe in time I can start to share what I created as well. Wishful thinking for now.&lt;/p&gt;
