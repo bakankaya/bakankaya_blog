@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://bakankaya.xyz/blog/00_hello_world/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/blog/00_hello_world/</loc>
 		<lastmod>2024-05-31</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/blog/01_show_less/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/blog/01_show_less/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/Resources/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/Resources/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/about/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/about/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/blog/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/blog/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/tags/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/tags/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/tags/no-tag/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/tags/no-tag/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://bakankaya.xyz/tags/react/</loc>
+		<loc>https://bakankaya.xyz/bakankaya_blog/tags/react/</loc>
 		<lastmod>2024-06-01</lastmod>
 	</url>
 </urlset>
