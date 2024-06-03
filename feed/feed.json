@@ -11,6 +11,14 @@
 	},
 	"items": [
 		{
+			"id": "https://bakankaya.xyz/blog/05-bar/",
+			"url": "https://bakankaya.xyz/blog/05-bar/",
+			"title": "Publishing finalizes?",
+			"content_html": "<p>bla bla vor vor</p>\n",
+			"date_published": "2024-06-03T00:00:00Z"
+		}
+		,
+		{
 			"id": "https://bakankaya.xyz/blog/04_Ph%20continues/",
 			"url": "https://bakankaya.xyz/blog/04_Ph%20continues/",
 			"title": "Publishing",
