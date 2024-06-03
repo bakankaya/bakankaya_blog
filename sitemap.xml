@@ -17,6 +17,11 @@
 	</url>
 	
 	<url>
+		<loc>https://bakankaya.xyz/blog/04_Ph%20continues/</loc>
+		<lastmod>2024-06-03</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://bakankaya.xyz/Resources/</loc>
 		<lastmod>2024-06-03</lastmod>
 	</url>
@@ -42,17 +47,17 @@
 	</url>
 	
 	<url>
+		<loc>https://bakankaya.xyz/tags/no-tag/</loc>
+		<lastmod>2024-06-03</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://bakankaya.xyz/tags/react/</loc>
 		<lastmod>2024-06-03</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://bakankaya.xyz/tags/blogging/</loc>
-		<lastmod>2024-06-03</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bakankaya.xyz/tags/no-tag/</loc>
 		<lastmod>2024-06-03</lastmod>
 	</url>
 </urlset>
