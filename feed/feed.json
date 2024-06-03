@@ -11,6 +11,14 @@
 	},
 	"items": [
 		{
+			"id": "https://bakankaya.xyz/blog/02_Publising/",
+			"url": "https://bakankaya.xyz/blog/02_Publising/",
+			"title": "Publishing",
+			"content_html": "<p>bla bla</p>\n",
+			"date_published": "2024-06-03T00:00:00Z"
+		}
+		,
+		{
 			"id": "https://bakankaya.xyz/blog/01_show_less/",
 			"url": "https://bakankaya.xyz/blog/01_show_less/",
 			"title": "Show Less/More",

@@ -4,12 +4,21 @@
 	<subtitle>desctiption</subtitle>
 	<link href="https://bakankaya.xyz/feed/feed.xml" rel="self"/>
 	<link href="https://bakankaya.xyz/"/>
-	<updated>2024-06-01T00:00:00Z</updated>
+	<updated>2024-06-03T00:00:00Z</updated>
 	<id>https://bakankaya.xyz/</id>
 	<author>
 		<name>bakankaya</name>
 		<email>batakankarakaya@gmail.com</email>
 	</author>
+	
+	<entry>
+		<title>Publishing</title>
+		<link href="https://bakankaya.xyz/blog/02_Publising/"/>
+		<updated>2024-06-03T00:00:00Z</updated>
+		<id>https://bakankaya.xyz/blog/02_Publising/</id>
+		<content type="html">&lt;p&gt;bla bla&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Show Less/More</title>
