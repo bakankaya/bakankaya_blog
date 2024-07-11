@@ -4,7 +4,7 @@
 	<subtitle>desctiption</subtitle>
 	<link href="https://bakankaya.xyz/feed/feed.xml" rel="self"/>
 	<link href="https://bakankaya.xyz/"/>
-	<updated>2024-07-11T14:39:49Z</updated>
+	<updated>2024-07-11T19:39:20Z</updated>
 	<id>https://bakankaya.xyz/</id>
 	<author>
 		<name>bakankaya</name>
@@ -14,10 +14,9 @@
 	<entry>
 		<title>hello</title>
 		<link href="https://bakankaya.xyz/posts/Hello/"/>
-		<updated>2024-07-11T14:39:49Z</updated>
+		<updated>2024-07-11T19:39:20Z</updated>
 		<id>https://bakankaya.xyz/posts/Hello/</id>
 			<content xml:lang="en" type="html">&lt;p&gt;Hi!&lt;/p&gt;
-&lt;h1 id=&quot;try-this&quot; tabindex=&quot;-1&quot;&gt;try this &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#try-this&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Hıdırı vıdırı çıdırı&lt;/p&gt;
 &lt;h2 id=&quot;tyr-that&quot; tabindex=&quot;-1&quot;&gt;tyr that &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#tyr-that&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;cel cülü cccee&lt;/p&gt;
@@ -27,6 +26,124 @@
 &lt;p&gt;dasfl,ielr,l&lt;/p&gt;
 &lt;h4 id=&quot;t&quot; tabindex=&quot;-1&quot;&gt;t &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#t&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;adifl,şlaesr&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Converting JavaScript to React Component</title>
+		<link href="https://bakankaya.xyz/posts/Converting_JS_to_React/"/>
+		<updated>2024-07-10T00:00:00Z</updated>
+		<id>https://bakankaya.xyz/posts/Converting_JS_to_React/</id>
+			<content xml:lang="en" type="html">&lt;p&gt;Now that I&#39;ve finished writing a weather applet. I want to use it in other webpages with more functionality.
+Since I have a hammer(React), now everything looks like a nail(a react component).&lt;/p&gt;
+&lt;p&gt;Joke aside, this feels like a good oppurtunity to remember the differences between vanilla js and react, to see the main differences and etc.&lt;/p&gt;
+&lt;p&gt;This is a small project to work on, there is one or two function to be translate into jsx. And when I manage to make it a reusable component, I can use it in a meaningful way.&lt;/p&gt;
+&lt;p&gt;I am going to write it step by step. So lets start with basics.&lt;/p&gt;
+&lt;h3 id=&quot;step-1-creating-a-react-app&quot; tabindex=&quot;-1&quot;&gt;Step 1 - Creating a React app &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Converting_JS_to_React/#step-1-creating-a-react-app&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I&#39;ll create a react prject with vite with following prompts:&lt;/p&gt;
+&lt;pre class=&quot;language-node&quot;&gt;&lt;code class=&quot;language-node&quot;&gt;npm create vite@latest 
+    //choosing react
+    //then in the folder:
+npm install
+npm run dev&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that I&#39;ve created a react project in the latest fashionable and easy way, lets clear out everything we don&#39;t need.&lt;/p&gt;
+&lt;p&gt;I&#39;ve cleared out everything from /assets and /public folders. in the index.html file, I&#39;ve changed the logo and title content.&lt;/p&gt;
+&lt;p&gt;Then I cleared /src file to leave with these three;&lt;/p&gt;
+&lt;p&gt;to &lt;code&gt;main.jsx&lt;/code&gt;;&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;react&#39;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ReactDOM &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;react-dom/client&#39;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; App &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;./App.jsx&#39;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;./index.css&#39;&lt;/span&gt;
+
+ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createRoot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;root&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;React.StrictMode&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;App&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;React.StrictMode&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;to &lt;code&gt;index.css&lt;/code&gt;;&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Inter&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; system-ui&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Avenir&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Helvetica&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Arial&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sans-serif&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.5&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 400&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;font-synthesis&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;text-rendering&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; optimizeLegibility&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;-webkit-font-smoothing&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; antialiased&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;-moz-osx-font-smoothing&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; grayscale&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and to &lt;code&gt;App.jsx&lt;/code&gt;;&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; App&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we can begin to write our app.&lt;/p&gt;
+&lt;h3 id=&quot;step-2-migrating-html-elements-and-css&quot; tabindex=&quot;-1&quot;&gt;Step 2 - migrating HTML elements and CSS &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Converting_JS_to_React/#step-2-migrating-html-elements-and-css&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;React needs one parent element to render. This can be done with a &lt;code&gt;&amp;lt;&amp;gt;&amp;lt;/&amp;gt;&lt;/code&gt; fragment when necessary but we already made our whole app in single div so, this wasn&#39;t a problem for us.&lt;/p&gt;
+&lt;p&gt;in React, we need to use &lt;code&gt;className&lt;/code&gt; instead of &lt;code&gt;class&lt;/code&gt;. So every class property needs to change &lt;code&gt;className&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;on first glance last thing we need to correct is the &lt;code&gt;onClick=&amp;quot;window.location.reload()&lt;/code&gt; part. This will translate into a function so erase this with the inital &lt;code&gt;value=&amp;quot; &amp;quot;&lt;/code&gt;  from our input and button elements.&lt;/p&gt;
+&lt;p&gt;For CSS, I just copied our css file to src file, named it same with the App.css to easily identify with our app and import it to App.jsx with this line:&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;./App.css&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Not in this project but in later on, I might handle dependencies like icons and fonts, be careful to import them accordingly to your app.&lt;/p&gt;
+&lt;p&gt;So far so good. No major problem.&lt;/p&gt;
+&lt;h3 id=&quot;step-3-getting-the-date&quot; tabindex=&quot;-1&quot;&gt;Step 3 - Getting the Date &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Converting_JS_to_React/#step-3-getting-the-date&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;First part of our js file was to get the days date, convert it to a readible format and instert it to DOM.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; date &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; optionsDate &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;weekday&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;long&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;numeric&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;long&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;numeric&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//    dayPeriod: &#39;short&#39;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; optionsTime &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;timeStyle&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;short&#39;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;.date span&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;textContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; date&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLocaleDateString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;en-EN&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; optionsDate&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I&#39;m going to add it as it is to the start of our App function with one change:&lt;/p&gt;
+&lt;p&gt;last line was for JS and all &lt;code&gt;document.querySelector&lt;/code&gt; part won&#39;t work in react. Because nothing triggers it.(I guess?) So instead i will make it a variable named &#39;todaysDate&#39; and in our return part where we render the page I&#39;m going to call the variable with bracelets.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; todaysDate &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; date&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLocaleDateString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;en-EN&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; optionsDate&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;weather-thingy&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;date&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;todaysDate&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;span&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I could have made another function to get the date and call it like a HTML property instead of call it as variable. ie. &lt;code&gt;&amp;lt;TodaysDate /&amp;gt;&lt;/code&gt;, this is the common react way, to make it a component. but I dont need another component. I want to make the weather app a standalone component.&lt;/p&gt;
+&lt;p&gt;Now our getting the date part is working, and we get to show using a variable in react.&lt;/p&gt;
+&lt;h3 id=&quot;step-4-implementing-useref-to-the-api-call&quot; tabindex=&quot;-1&quot;&gt;Step 4 - Implementing useRef to the API call &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Converting_JS_to_React/#step-4-implementing-useref-to-the-api-call&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Now the whole &lt;code&gt;fetch()&lt;/code&gt; part is working fine. But we have problem at getting the city name for our API call. Because initally we are reading from DOM, and use it as a variable. But now, react uses Virtual DOM and because of that.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; cityQuery &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;.location input&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; city &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cityQuery&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Part is not reading any value. while it is still possible to use it, react encourages the usage of &lt;code&gt;useRef&lt;/code&gt;. So after importing the &lt;code&gt;useRef&lt;/code&gt; I changed the following lines:&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; cityQuery &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useRef&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;ankara&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; city &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cityQuery&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;Enter city&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;cityQuery&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;instead of reading the value, we are referancing the input.&lt;/p&gt;
+&lt;p&gt;With the inital value, before making a request it still returns a city name.&lt;/p&gt;
+&lt;p&gt;and in our city variable, which we use in URL, instead of value, we are using &lt;code&gt;.current&lt;/code&gt; to read the initail value, or the changed value.&lt;/p&gt;
+&lt;h3 id=&quot;step-5-search-button-and-changing-the-refresh&quot; tabindex=&quot;-1&quot;&gt;Step 5 - Search Button and changing the refresh &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Converting_JS_to_React/#step-5-search-button-and-changing-the-refresh&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;On our JS app, we simply overwrite the default input value then refresh the page on HTML with&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;window.location.reload()&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Search&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But it is an inefficient hack at best. And not a reasonable way to do things in react.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;to be continued...&lt;/em&gt;&lt;/p&gt;
 </content>
 	</entry>
 	
