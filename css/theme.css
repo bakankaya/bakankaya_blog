@@ -1,0 +1,60 @@
+
+@font-face {
+	font-family: Lato;
+	src: url(../css/fonts/Lato-Regular.ttf);
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Lato-Black;
+	src: url(../css/fonts/Lato-Black.ttf);
+	font-style:normal;
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: Ibm-plex-mono;
+	src: url(../css/fonts/IBMPlexMono-Regular.ttf);
+}
+
+:root {
+	--font-family: Lato, Lato-Black;
+	--font-family-monospace: Ibm-plex-mono;
+}
+
+/* Theme colors */
+:root {
+
+	--color-gray-25: #cccedb;
+	--color-gray-50: #9da1b5;
+	--color-gray-75: #7a7e95;
+	--color-gray-100: #636676;
+
+	--color-red-25: #a42b29;
+	--color-red-50: #901714;
+	--color-red-75: #691c1a;
+	--color-red-100: #4e1c1b;
+
+	--color-blue-50: #2e3b4e;
+	--color-blue-75: #27303c;
+
+	--color-light-blue: #2172ab;
+
+	--background-color: var(--color-gray-50);
+	--text-color: #171c30;
+
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+
+	--color-detail: #45586a;
+	--color-another-gray: #878ea0;
+	
+	
+	--color-white: #b4b7c3;
+	--color-black:#070e1e;
+	--4: #3a3845;
+	--5: #bfc1ce;
+}

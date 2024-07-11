@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="desctiption">
+
+        <link rel="icon" href="/img/bakankaya-openart.ico">
+        <title>bakankaya&#39;s blog</title>
+
+        <link rel="stylesheet" href="/css/index.css" >
+        <link rel="stylesheet" href="/css/theme.css" >
+        <link rel="stylesheet" href="/css/prism(1).css" >
+
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="bakankaya&#39;s blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="bakankaya&#39;s blog">
+
+        
+        
+
+
+        <meta name="generator" content="Eleventy v3.0.0">
+    </head>
+    <body>
+        <aside>
+            <header>
+                <a href="/"> <img class="logo" src="/img/bakankaya-openart.png"></a>
+                <a href="/" class="home-link">bakankaya&#39;s blog</a>
+                <img src="/img/icons8-menu-48.png" class="hamburger-icon" onClick="toggle()">
+            </header>
+			<nav id="navigation" class="navigation">
+                
+                
+
+                <ul class="nav-list" role="list">
+                
+                    <li>
+                    <a href="/" aria-current="page" >Home</a>
+                    </li>
+                
+                    <li>
+                    <details
+                        
+                        
+                    >
+                        <summary>Posts</summary>
+                        <ul role="list">
+                
+                    <li>
+                    <a href="/posts/Hello/">Hello</a>
+                    </li></ul>
+                    </details>
+                    </li>
+                
+                
+                    <li>
+                    <a href="/tags/">Tags</a>
+                    </li>
+                
+                    <li>
+                    <a href="/Resources/">Resources</a>
+                    </li>
+                
+                    <li>
+                    <a href="/about/aboutme/">About Me</a>
+                    </li></ul>
+                <footer></footer>
+			</nav>
+
+        </aside>
+
+        <main>
+            
+
+<h1>Latest 3 Posts</h1>
+
+
+
+
+<ol reversed class="postlist">
+
+	<li class="postlist-item">
+		<a href="/posts/Hello/" class="postlist-link">hello</a>
+		<time class="postlist-date" datetime="2024-07-11">July 2024</time>
+	</li>
+
+	<li class="postlist-item">
+		<a href="/posts/01_show_less/" class="postlist-link">Show Less/More</a>
+		<time class="postlist-date" datetime="2024-06-01">June 2024</time>
+	</li>
+
+	<li class="postlist-item">
+		<a href="/posts/00_hello_world/" class="postlist-link">Hello, World!</a>
+		<time class="postlist-date" datetime="2024-05-31">May 2024</time>
+	</li>
+
+</ol>
+
+
+
+
+
+
+
+
+        </main>
+
+        <script>
+        function toggle() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " visible";
+            } else {
+                x.className = "navigation";
+            }
+        }
+        </script>
+    </body>
+</html>

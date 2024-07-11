@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is the second post.">
+
+        <link rel="icon" href="/img/bakankaya-openart.ico">
+        <title>Show Less/More</title>
+
+        <link rel="stylesheet" href="/css/index.css" >
+        <link rel="stylesheet" href="/css/theme.css" >
+        <link rel="stylesheet" href="/css/prism(1).css" >
+
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="bakankaya&#39;s blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="bakankaya&#39;s blog">
+
+        
+        
+
+
+        <meta name="generator" content="Eleventy v3.0.0">
+    </head>
+    <body>
+        <aside>
+            <header>
+                <a href="/"> <img class="logo" src="/img/bakankaya-openart.png"></a>
+                <a href="/" class="home-link">bakankaya&#39;s blog</a>
+                <img src="/img/icons8-menu-48.png" class="hamburger-icon" onClick="toggle()">
+            </header>
+			<nav id="navigation" class="navigation">
+                
+                
+
+                <ul class="nav-list" role="list">
+                
+                    <li>
+                    <a href="/">Home</a>
+                    </li>
+                
+                    <li>
+                    <details
+                        
+                        
+                    >
+                        <summary>Posts</summary>
+                        <ul role="list">
+                
+                    <li>
+                    <a href="/posts/Hello/">Hello</a>
+                    </li></ul>
+                    </details>
+                    </li>
+                
+                
+                    <li>
+                    <a href="/tags/">Tags</a>
+                    </li>
+                
+                    <li>
+                    <a href="/Resources/">Resources</a>
+                    </li>
+                
+                    <li>
+                    <a href="/about/aboutme/">About Me</a>
+                    </li></ul>
+                <footer></footer>
+			</nav>
+
+        </aside>
+
+        <main>
+            
+<div>
+<h1>Show Less/More</h1>
+<time datetime="2024-06-01">01 June 2024</time>
+</div>
+
+<div class="post">
+<p>I wanted to create a <em>accordion</em> like show/hide functionality to my React project. It was a simple enough request from client (me!), but it was not a simple search for my part.</p>
+<p>First of all, the things I wanted to show was an array full of objects and the initial rendering was made by a <code>.map</code> method.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> arrayName <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span><span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">description</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">url</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">description</span><span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+  <span class="token punctuation">]</span>
+  
+<span class="token keyword">return</span><span class="token punctuation">(</span>
+
+<span class="token operator">...</span>
+
+<span class="token punctuation">{</span>arrayName<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">arrayItem</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Component</span></span>
+            <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>title<span class="token punctuation">}</span></span>
+            <span class="token attr-name">title</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>arrayItemt<span class="token punctuation">.</span>title<span class="token punctuation">}</span></span>
+            <span class="token attr-name">description</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>description<span class="token punctuation">}</span></span>
+            <span class="token attr-name">url</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>url<span class="token punctuation">}</span></span>
+          <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  </code></pre>
+<p>I didn't wanted to change the whole code just for this. So I tried to find a solution around the code.</p>
+<p>My first idea was to limit the viewport, hide the overflow with some css and connect the button to viewport to widen the part where my list is rendered. It was simple, fast and first to come to mind.</p>
+<p>But it has caveats of its own. First of all it would be a responsiveness hell. Also, it was all or limited, maybe in the future I wanted a more gradual system like show more&gt; show more&gt; show more... show less/collapse. So it was a good oppurtunity to create a <code>useState</code> hook.</p>
+<p>So I defined the useState array at the start of the main function:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">[</span>itemList<span class="token punctuation">,</span> setItemList<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>I preferred the conventional naming for everything. It actually doesn't matter what you name them, but for readability I chose the boring names.<br>
+for the initial state I wrote '3' because that's the number of items I wanted to show, well... 'initially'.</p>
+<p>So now the imporant part comes. To find this solution took some time on my part.<br>
+As I mentioned, rendered array used a <code>.map</code> method. Which maps <em>all</em> the items in array. How can I show less, and more importantly, then change the number to show more?</p>
+<p>Well the answer is another method called <code>.slice</code>.</p>
+<p>And in JavaScript you can use more than one method on the same line;</p>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">{</span>arrayName<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> itemList<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">arrayItem</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>Component
+            key<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+            title<span class="token operator">=</span><span class="token punctuation">{</span>arrayItemt<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+            description<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>description<span class="token punctuation">}</span>
+            url<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>url<span class="token punctuation">}</span>
+            imageSrc<span class="token operator">=</span><span class="token punctuation">{</span>arrayItem<span class="token punctuation">.</span>imageSrc<span class="token punctuation">}</span>
+          <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre>
+<p>It takes two arguments the start and end point of a 'slice' of your array. Since I wanted to start from the begining all the time first one is '0', second was the 'itemList' and this way I can change it anytime I want.</p>
+<p>then I added a function to manipulate the state:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>itemList <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span>arrayName<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>It is pretty straight foward but I'll explain anyway. When clicked if the itemlist in initial state which is 3, change the state to array's length, which means all of it.<br>
+When state is changed, and become more than 3 else is run when we call the function, which changes the state to 3 again.<br>
+(This comparison probably be made with absolute compare <code>===</code> better. But it works all the same in this case.)</p>
+<p>And lastly a Button to bind the function added to the rendering part:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span><span class="token punctuation">(</span>
+    
+    <span class="token operator">...</span>
+    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Button</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span></code></pre>
+<p>Now, This buttons text needs to change to 'more' or 'less'. And we can do it with a simple ternary script here as well.</p>
+<pre class="language-jsx"><code class="language-jsx">
+condition <span class="token operator">?</span> exprIfTrue <span class="token operator">:</span> exprIfFalse
+</code></pre>
+<p>Another way that we can do it with is to add this to <code>handleClick</code> and pass it to rendering parts. But I have other plans for there later, so this will do fine. so in our case it will be like this;</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span><span class="token punctuation">(</span>
+    <span class="token operator">...</span>
+    <span class="token operator">...</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">{</span>itemsList <span class="token operator">===</span> <span class="token number">3</span> <span class="token operator">?</span> <span class="token string">"Show More"</span> <span class="token operator">:</span> <span class="token string">"Show Less"</span><span class="token punctuation">}</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Button</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span></code></pre>
+<p><strong>Sucsess!</strong> Now with useState I made a functional button that shows More/Less.</p>
+<p>But now the position of viewport changes and leaves me in unwanted places everytime I press the button. So it would be nice to add some animation and change the position as well. So I expand my <code>handleClick</code> function a little more;</p>
+<pre class="language-jsx"><code class="language-jsx">  <span class="token keyword">const</span> <span class="token punctuation">[</span>itemList<span class="token punctuation">,</span> setItemList<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> startElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"section-start"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> endElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"section-end"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+<span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>itemList <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span>projects<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      endElement<span class="token punctuation">.</span><span class="token function">scrollIntoView</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">behavior</span><span class="token operator">:</span> <span class="token string">"smooth"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">block</span><span class="token operator">:</span> <span class="token string">"start"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">setItemList</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      startElement<span class="token punctuation">.</span><span class="token function">scrollIntoView</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">behavior</span><span class="token operator">:</span> <span class="token string">"smooth"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">block</span><span class="token operator">:</span> <span class="token string">"start"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>with <code>getElementById</code> I added some <code>id</code> to places I wanted to scroll and locate them in my function.
+then with <code>.scrollIntoView</code> I change my viewport everytime I pressed the button.</p>
+
+</div>
+
+<ul class="post-metadata">
+	<span>Tags:</span>
+	<li><a href="/tags/react/" class="post-tag">React</a></li>
+	<li><a href="/tags/trial/" class="post-tag">Trial</a></li>
+	<li><a href="/tags/another/" class="post-tag">Another</a></li>
+</ul>
+<div class="links-nextprev"><a class="prev" href="/posts/00_hello_world/"><span>Hello, World!</span><span>:Prev</span></a><a class="next" href="/posts/Hello/"><span>Next:</span><span>hello</span></a>
+</div>
+        </main>
+
+        <script>
+        function toggle() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " visible";
+            } else {
+                x.className = "navigation";
+            }
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,305 @@
+@import './theme.css';
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 90%;
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	font-size: 0.95rem;
+	color: var(--text-color);
+	background-color: #9da1b5;
+}
+html {
+	overflow-y: scroll;
+}
+
+
+main{
+	margin-left: 25%;
+	max-width: 55em;
+	padding-left: 1em;
+	font-weight: 400;
+}
+
+
+main h1{
+	font-family: Lato-Black;
+	font-weight: 900;
+	border-bottom: 2px solid var(--color-red-50);
+	margin-bottom: 0;
+	height: 80px;
+	line-height: 80px;
+	padding-left: 1em;
+	background-color: #7a7e95;
+	color: var(--color-light-blue);
+	border-radius: 3px 3px 0 0;
+}
+
+time {
+	float: right;
+	font-style: italic;
+	font-size: 0.9em;
+	padding-right: 0.5em;
+}
+
+
+.post {
+	text-align: justify;
+	background-color: #cccedb;
+	border-radius: 3px;
+	padding: 1em 0.5em;
+	box-shadow: 0 1px 1px var(--color-blue-50);
+}
+
+p {
+	line-height: 1.25em;
+}
+
+p:first-of-type {
+	margin-top: 1em;
+	text-indent: 1.5em;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+.post a[href] {
+	color: var(--text-color-link);
+}
+.post a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+.post a[href]:hover,
+.post a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+/****************************************************/
+/* 			Header 									*/
+/****************************************************/
+
+aside {
+	position: fixed;
+	width: 20%;
+	background-color: #cccedb;
+	box-shadow: 0 1px 1px var(--color-blue-50);
+}
+
+header{
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 80px;
+	background-color: var(--color-red-50);
+}
+
+footer{
+	height: 40px;
+	background-color: var(--color-red-50);
+}
+
+.logo {
+	max-width: 80px;
+}
+
+.hamburger-icon{
+	display: none;
+}
+
+.home-link {
+	max-width: 100%;
+	height: 80px;
+	line-height: 80px;
+	font-size: 1.2em; /* 16px /16 */
+	font-weight: 900;
+	font-family: Lato-Black;
+	text-align: center;
+	color: var(--color-gray-25);
+	margin-right: auto;
+	margin-left: auto;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/****************************************************/
+/* 			Navigaiton								*/
+/****************************************************/
+.navigation > ul{
+	padding-right: 0.5em;
+}
+:where([role="list"]) {
+	list-style: none;
+	padding: 0.5em;
+	padding-right: 0;
+	margin: 0;
+}
+
+.nav-list a,
+.nav-list summary {
+	cursor: pointer;
+	padding-block: .375rem;
+	display: block;
+	padding: 8px 16px;
+	text-decoration: none;
+	color: var(--text-color);
+	border-radius: 3px;
+}
+
+/* To hide the arrow comes with 'detail', display:block generally fixes but this rule is for extra safety */
+.nav-list summary::-webkit-details-marker {
+	display: none;
+}
+
+.nav-list a:hover,
+.nav-list summary:hover {
+	background-color: var(--5);
+}
+
+.nav-list details > [role="list"] {
+	padding-inline-start: .75rem;
+}
+
+.nav-list a[aria-current="page"]{
+  background-color: var(--color-light-blue);
+}
+details[open] summary{
+	background-color: #3a8bc4;
+}
+
+/****************************************************/
+/* 			Posts 									*/
+/****************************************************/
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+}
+
+.post-metadata a{
+	padding: 4px;
+	background-color: var(--color-detail);
+	color:#adbac7;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+
+.links-nextprev {
+	justify-content: space-between;
+	width: 100%;
+	list-style: none;
+	border-top: 2px solid var(--color-red-50);
+	padding: 0.9em 0.5em;
+	margin-bottom: 1em;
+}
+
+
+.next, .prev {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 48%;
+	padding: 4px;
+	background-color: var(--color-red-25);
+	color: var(--color-gray-25);
+	border: 1px solid var(--color-blue-75);
+	box-shadow: 0 1px 1px var(--color-blue-50);
+	border-radius: 3px;
+	text-decoration: none;
+
+}
+
+.next:hover,
+.prev:hover {
+	background-color: var(--color-red-50);
+	box-shadow: 0 3px 2px var(--color-blue-50);
+} 
+
+.next {
+	float: right;
+}
+
+@media screen and (max-width: 1200px) {
+	html, body {
+		width: 100%;
+	}
+
+	aside {
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	aside {
+		top: 0;
+		width: 100%;
+		display: flex;
+    	flex-direction: column;
+	}
+	main{
+		margin-top:50px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 98%;
+		padding-left: 0;
+	}
+	.hamburger-icon{
+		display: block;
+	}
+	header{
+		height: 48px;
+	}
+	.home-link {
+		height: 48px;
+		line-height: 48px;
+	}
+	.logo {
+		height: 48px;
+	}
+	.navigation{
+		display: none;
+	}
+	.navigation.visible{
+		display: block;
+	}
+	.postlist {
+		width: 100%;
+	}
+
+}
+
+.postlist {
+	width: 80%;
+	padding-left: 3em;
+	margin-top: 2em;
+}
+.postlist-item {
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+
+.postlist-link {
+	padding-left: .25em;
+	padding-right: .5em;
+	font-size: 1.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+
+
+
+
