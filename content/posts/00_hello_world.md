@@ -4,6 +4,9 @@ description: This is the inital post.
 date: 2024-05-31
 tags:
   - No tag
+eleventyNavigation:
+  key: Hello, World!
+  parent: Posts
 ---
 
 I guess it is a suitable first post for a blog about programming. I'm neither an engineer nor a programmer per se, but I'm an enthusiast and an aspiring developer. I was born in an internetless era, so everything that has been made so far has been magical to me, and it has been my true interest and hobby since I was a child. I started to get serious about it, which is relatively new. For more than two years, I have been studying at bootcamps, in certification programs, for an undergraduate degree, and so on.

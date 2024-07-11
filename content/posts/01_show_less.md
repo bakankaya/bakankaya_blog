@@ -4,8 +4,9 @@ description: This is the second post.
 date: 2024-06-01
 tags:
   - React
-  - Trial
-  - Another
+eleventyNavigation:
+  key: Show Less/More
+  parent: Posts
 ---
 
 I wanted to create a *accordion* like show/hide functionality to my React project. It was a simple enough request from client (me!), but it was not a simple search for my part.

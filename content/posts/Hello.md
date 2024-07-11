@@ -9,7 +9,6 @@ eleventyNavigation:
 
 Hi!
 
-# try this
 Hıdırı vıdırı çıdırı
 ## tyr that
 cel cülü cccee

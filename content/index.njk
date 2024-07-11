@@ -3,7 +3,7 @@ layout: base.njk
 eleventyNavigation:
   key: Home
   order: 1
-numberOfLatestPostsToShow: 3
+numberOfLatestPostsToShow: 5
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
@@ -19,8 +19,8 @@ numberOfLatestPostsToShow: 3
 {% endif %}
 
 {# List every content page in the project #}
-{# 
-<ul>
+
+{# <ul>
 	{%- for entry in collections.all %}
 	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
 	{%- endfor %}

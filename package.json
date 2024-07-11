@@ -1,5 +1,5 @@
 {
-  "name": "bakankaya_blog_2",
+  "name": "bakankaya_blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,8 +11,8 @@
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
     "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["11ty", "11ty-blog"],
+  "author": "bakankaya",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
