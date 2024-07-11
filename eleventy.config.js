@@ -103,7 +103,7 @@ module.exports = function(eleventyConfig) {
 			includes: "../_includes",  				// default: "_includes"
 			data: "../_includes/_data",         	// default: "_data"
 			layouts: "../_includes/_layouts",
-			output: "_output"
+			output: "_site"
 		},
 
 		pathPrefix: "/",
