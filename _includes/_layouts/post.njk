@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+
+<div>
+<h1>{{ title }}</h1>
+<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+</div>
+
+<div class="post">
+{{ content | safe }}
+</div>
+
+<ul class="post-metadata">
+	<span>Tags:</span>
+	{%- for tag in tags | filterTagList %}
+	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
+	{%- endfor %}
+</ul>
+
+{%- if collections.posts %}
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<div class="links-nextprev">
+	{%- if previousPost %}<a class="prev" href="{{ previousPost.url }}"><span>{{ previousPost.data.title }}</span><span>:Prev</span></a>{% endif %}
+	{%- if nextPost %}<a class="next" href="{{ nextPost.url }}"><span>Next:</span><span>{{ nextPost.data.title }}</span></a>{% endif %}
+</div>
+{%- endif %}
+{%- endif %}

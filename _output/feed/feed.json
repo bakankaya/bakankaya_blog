@@ -1,0 +1,35 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "bakankaya&#39;s blog",
+	"language": "en",
+	"home_page_url": "https://bakankaya.xyz/",
+	"feed_url": "https://bakankaya.xyz/feed/feed.json",
+	"description": "desctiption",
+	"author": {
+		"name": "bakankaya",
+		"url": "https://bakankaya.xyz/about/"
+	},
+	"items": [
+		{
+			"id": "https://bakankaya.xyz/posts/Hello/",
+			"url": "https://bakankaya.xyz/posts/Hello/",
+			"title": "hello",
+			"date_published": "2024-06-06T06:43:52Z"
+		}
+		,
+		{
+			"id": "https://bakankaya.xyz/posts/01_show_less/",
+			"url": "https://bakankaya.xyz/posts/01_show_less/",
+			"title": "Show Less/More",
+			"date_published": "2024-06-01T00:00:00Z"
+		}
+		,
+		{
+			"id": "https://bakankaya.xyz/posts/00_hello_world/",
+			"url": "https://bakankaya.xyz/posts/00_hello_world/",
+			"title": "Hello, World!",
+			"date_published": "2024-05-31T00:00:00Z"
+		}
+		
+	]
+}

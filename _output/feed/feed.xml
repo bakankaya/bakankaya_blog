@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
+	<title>bakankaya&#39;s blog</title>
+	<subtitle>desctiption</subtitle>
+	<link href="https://bakankaya.xyz/feed/feed.xml" rel="self"/>
+	<link href="https://bakankaya.xyz/"/>
+	<updated>2024-06-06T06:43:52Z</updated>
+	<id>https://bakankaya.xyz/</id>
+	<author>
+		<name>bakankaya</name>
+		<email>batakankarakaya@gmail.com</email>
+	</author>
+	
+	<entry>
+		<title>hello</title>
+		<link href="https://bakankaya.xyz/posts/Hello/"/>
+		<updated>2024-06-06T06:43:52Z</updated>
+		<id>https://bakankaya.xyz/posts/Hello/</id>
+			<content xml:lang="en" type="html">&lt;p&gt;Hi!&lt;/p&gt;
+&lt;h1 id=&quot;try-this&quot; tabindex=&quot;-1&quot;&gt;try this &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#try-this&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Hıdırı vıdırı çıdırı&lt;/p&gt;
+&lt;h2 id=&quot;tyr-that&quot; tabindex=&quot;-1&quot;&gt;tyr that &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#tyr-that&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;cel cülü cccee&lt;/p&gt;
+&lt;h2 id=&quot;also-try-his&quot; tabindex=&quot;-1&quot;&gt;also try his &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#also-try-his&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;adfaildf,ila, le,rlw,qer&lt;/p&gt;
+&lt;h3 id=&quot;tr&quot; tabindex=&quot;-1&quot;&gt;tr &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#tr&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;dasfl,ielr,l&lt;/p&gt;
+&lt;h4 id=&quot;t&quot; tabindex=&quot;-1&quot;&gt;t &lt;a class=&quot;header-anchor&quot; href=&quot;https://bakankaya.xyz/posts/Hello/#t&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;adifl,şlaesr&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Show Less/More</title>
+		<link href="https://bakankaya.xyz/posts/01_show_less/"/>
+		<updated>2024-06-01T00:00:00Z</updated>
+		<id>https://bakankaya.xyz/posts/01_show_less/</id>
+			<content xml:lang="en" type="html">&lt;p&gt;I wanted to create a &lt;em&gt;accordion&lt;/em&gt; like show/hide functionality to my React project. It was a simple enough request from client (me!), but it was not a simple search for my part.&lt;/p&gt;
+&lt;p&gt;First of all, the things I wanted to show was an array full of objects and the initial rendering was made by a &lt;code&gt;.map&lt;/code&gt; method.&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; arrayName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token literal-property property&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token literal-property property&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token literal-property property&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token literal-property property&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token literal-property property&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token literal-property property&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayName&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;arrayItem&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Component&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token attr-name&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token attr-name&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItemt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token attr-name&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;description&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+            &lt;span class=&quot;token attr-name&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I didn&#39;t wanted to change the whole code just for this. So I tried to find a solution around the code.&lt;/p&gt;
+&lt;p&gt;My first idea was to limit the viewport, hide the overflow with some css and connect the button to viewport to widen the part where my list is rendered. It was simple, fast and first to come to mind.&lt;/p&gt;
+&lt;p&gt;But it has caveats of its own. First of all it would be a responsiveness hell. Also, it was all or limited, maybe in the future I wanted a more gradual system like show more&amp;gt; show more&amp;gt; show more... show less/collapse. So it was a good oppurtunity to create a &lt;code&gt;useState&lt;/code&gt; hook.&lt;/p&gt;
+&lt;p&gt;So I defined the useState array at the start of the main function:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;itemList&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setItemList&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I preferred the conventional naming for everything. It actually doesn&#39;t matter what you name them, but for readability I chose the boring names.&lt;br /&gt;
+for the initial state I wrote &#39;3&#39; because that&#39;s the number of items I wanted to show, well... &#39;initially&#39;.&lt;/p&gt;
+&lt;p&gt;So now the imporant part comes. To find this solution took some time on my part.&lt;br /&gt;
+As I mentioned, rendered array used a &lt;code&gt;.map&lt;/code&gt; method. Which maps &lt;em&gt;all&lt;/em&gt; the items in array. How can I show less, and more importantly, then change the number to show more?&lt;/p&gt;
+&lt;p&gt;Well the answer is another method called &lt;code&gt;.slice&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And in JavaScript you can use more than one method on the same line;&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayName&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; itemList&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;arrayItem&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Component
+            key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            title&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItemt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            description&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;description&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            url&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            imageSrc&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;arrayItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;imageSrc&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It takes two arguments the start and end point of a &#39;slice&#39; of your array. Since I wanted to start from the begining all the time first one is &#39;0&#39;, second was the &#39;itemList&#39; and this way I can change it anytime I want.&lt;/p&gt;
+&lt;p&gt;then I added a function to manipulate the state:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleClick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;itemList &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;setItemList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;arrayName&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;setItemList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It is pretty straight foward but I&#39;ll explain anyway. When clicked if the itemlist in initial state which is 3, change the state to array&#39;s length, which means all of it.&lt;br /&gt;
+When state is changed, and become more than 3 else is run when we call the function, which changes the state to 3 again.&lt;br /&gt;
+(This comparison probably be made with absolute compare &lt;code&gt;===&lt;/code&gt; better. But it works all the same in this case.)&lt;/p&gt;
+&lt;p&gt;And lastly a Button to bind the function added to the rendering part:&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+    
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleClick&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, This buttons text needs to change to &#39;more&#39; or &#39;less&#39;. And we can do it with a simple ternary script here as well.&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;
+condition &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; exprIfTrue &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; exprIfFalse
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Another way that we can do it with is to add this to &lt;code&gt;handleClick&lt;/code&gt; and pass it to rendering parts. But I have other plans for there later, so this will do fine. so in our case it will be like this;&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleClick&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;itemsList &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Show More&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Show Less&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Sucsess!&lt;/strong&gt; Now with useState I made a functional button that shows More/Less.&lt;/p&gt;
+&lt;p&gt;But now the position of viewport changes and leaves me in unwanted places everytime I press the button. So it would be nice to add some animation and change the position as well. So I expand my &lt;code&gt;handleClick&lt;/code&gt; function a little more;&lt;/p&gt;
+&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;itemList&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setItemList&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; startElement &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;section-start&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; endElement &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;section-end&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleClick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;itemList &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;setItemList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;projects&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      endElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;scrollIntoView&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;behavior&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;smooth&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;setItemList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      startElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;scrollIntoView&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;behavior&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;smooth&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;with &lt;code&gt;getElementById&lt;/code&gt; I added some &lt;code&gt;id&lt;/code&gt; to places I wanted to scroll and locate them in my function.
+then with &lt;code&gt;.scrollIntoView&lt;/code&gt; I change my viewport everytime I pressed the button.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Hello, World!</title>
+		<link href="https://bakankaya.xyz/posts/00_hello_world/"/>
+		<updated>2024-05-31T00:00:00Z</updated>
+		<id>https://bakankaya.xyz/posts/00_hello_world/</id>
+			<content xml:lang="en" type="html">&lt;p&gt;I guess it is a suitable first post for a blog about programming. I&#39;m neither an engineer nor a programmer per se, but I&#39;m an enthusiast and an aspiring developer. I was born in an internetless era, so everything that has been made so far has been magical to me, and it has been my true interest and hobby since I was a child. I started to get serious about it, which is relatively new. For more than two years, I have been studying at bootcamps, in certification programs, for an undergraduate degree, and so on.&lt;/p&gt;
+&lt;p&gt;In other words, I have been in tutorial hell. And I will continue to be. Because I&#39;m still learning and discovering. This blog is another part of it.&lt;/p&gt;
+&lt;p&gt;I wanted to create a blog for a very long time; better late than never. In this blog, I will share what I learned and how I learned it. Maybe in time I can start to share what I created as well. Wishful thinking for now.&lt;/p&gt;
+&lt;p&gt;You can find all my study notes, my resources, and my conclusions. I will try to organize the information to be useful, foremost for me. The details, the how-tos, and the and the tricks are hard to come by. If anyone willingly starts to read this blog, they can be a fellow traveler with me on this never-ending journey of learning.&lt;/p&gt;
+&lt;p&gt;I will try to keep my opinions out of them, because the web is full of it, and nowadays it has become a pollution. And I will try to be responsible with your time; I don&#39;t want to waste it on arguments. My point is that this blog aims to be useful, not wasteful.&lt;/p&gt;
+&lt;p&gt;Hello, world.... These are the words we print out in every programming tutorial—the first and most simple programs we write. It became a tradition, which I am fond of. Because it implies excitement and ambition. I think this is the first small step to greatness. What we are going to do is important enough to announce to the world.&lt;/p&gt;
+&lt;p&gt;And the first words of a baby program, saluting as well. I may not create a blog that matters to the world. Far from greatness, more like a study book.&lt;/p&gt;
+&lt;p&gt;Anyway, welcome!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/%22Hello,_World!%22_program&quot;&gt;&amp;quot;Hello, World!&amp;quot; Wikipedia Page&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
+</feed>

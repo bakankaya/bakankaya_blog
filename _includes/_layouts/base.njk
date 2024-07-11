@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ description or metadata.description }}">
+
+        <link rel="icon" href="/img/bakankaya-openart.ico">
+        <title>{{ title or metadata.title }}</title>
+
+        <link rel="stylesheet" href="{{ '/css/index.css' | url }}" >
+        <link rel="stylesheet" href="{{ '/css/theme.css' | url }}" >
+        <link rel="stylesheet" href="{{ '/css/prism(1).css' | url }}" >
+
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+
+        {# {%- css %}{% include "public/css/index.css"  %}{% endcss %}
+        {%- css %}{% include "public/css/theme.css"  %}{% endcss %}
+        {# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
+        {# <style>{% getBundle "css" %}</style> #}
+
+
+        <meta name="generator" content="{{ eleventy.generator }}">
+    </head>
+    <body>
+        <aside>
+            <header>
+                <a href="/"> <img class="logo" src="/img/bakankaya-openart.png"></a>
+                <a href="/" class="home-link">{{ metadata.title }}</a>
+                <img src="/img/icons8-menu-48.png" class="hamburger-icon" onClick="toggle()">
+            </header>
+			<nav id="navigation" class="navigation">
+                {% set navPages = collections.all | eleventyNavigation %}
+                {% macro renderNavListItem(entry) %}
+                {% if entry.children.length %}
+                    <li>
+                    <details
+                        {%- for child in entry.children %}
+                        {% if child.parent == entry.title and child.url == page.url %}
+                            class="is-active"
+                            open
+                        {% endif %}
+                        {% endfor %}
+                    >
+                        <summary>{{ entry.title }}</summary>
+                        <ul role="list">
+                        {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+                        </ul>
+                    </details>
+                    </li>
+                {% else %}
+                    <li>
+                    <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page" {% endif %}>{{ entry.title }}</a>
+                    </li>
+                {%- endif -%}
+                {%- endmacro %}
+
+                <ul class="nav-list" role="list">
+                    {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+                </ul>
+                <footer></footer>
+			</nav>
+
+        </aside>
+
+        <main>
+            {{ content | safe }}
+        </main>
+
+        <script>
+        function toggle() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " visible";
+            } else {
+                x.className = "navigation";
+            }
+        }
+        </script>
+    </body>
+</html>
