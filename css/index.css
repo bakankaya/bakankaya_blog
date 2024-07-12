@@ -37,6 +37,7 @@ main h1{
 	background-color: #7a7e95;
 	color: var(--color-light-blue);
 	border-radius: 3px 3px 0 0;
+	overflow: auto;
 }
 
 time {
